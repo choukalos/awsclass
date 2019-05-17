@@ -33,6 +33,9 @@ ${AWS} s3 ls s3://
 # Get the bucket policy for the bucket you created
 echo "Fetching bucket ${BUCKETNAME} policy"
 ${AWS} s3api get-bucket-policy --bucket ${BUCKETNAME}
+echo "Fetching bucket ${BUCKETNAME} ACLs"
+${AWS} s3api get-bucket-acl --bucket ${BUCKETNAME}
+
 
 # delete the two files in the buckets
 echo "Deleting file1 from bucket ${BUCKETNAME}"
